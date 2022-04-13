@@ -42,10 +42,24 @@ removerProduto = function (requisicao, resposta) {
   })
 }
 
-
+buscarProduto = function(requisicao, resposta) {
+  //https://www.mongodb.com/docs/manual/reference/operator/query/
+  var { consulta } = requisicao.query
+  consulta = JSON.parse(consulta)
+  Produtos.find(consulta, (erro, dados) => {
+    if (erro) {
+      return resposta.send({mensagem: "[ERRO]: Na busca com filtros!"})
+    }
+    if (dados != null) {
+      return resposta.send(dados)
+    }
+    return resposta.send({mensagem: "[AVISO]: produto não existe no BD!"})  
+  })
+}
 
 module.exports = {
-  listarProdutos, adicionarProduto, removerProduto
+  listarProdutos, adicionarProduto, removerProduto,
+  buscarProduto
 }
 
 
