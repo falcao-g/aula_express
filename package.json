@@ -1,13 +1,13 @@
 {
-  "name": "lp3",
+  "name": "trabalho_lp",
   "version": "1.0.0",
-  "description": "Projeto com express",
+  "description": "Api de livros",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Falcão",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
